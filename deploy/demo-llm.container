@@ -1,0 +1,20 @@
+[Unit]
+Description=Demo LLM (llama.cpp + Qwen3 0.6B)
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=demo-llm
+Image=ghcr.io/ggml-org/llama.cpp:server
+Network=systemd-training
+Volume=demo-llm-models:/models
+Environment=LLAMA_CACHE=/models
+Exec=-hf unsloth/Qwen3-0.6B-GGUF:Q4_K_M --jinja -c 4096 -np 1 -t 1 --host 0.0.0.0 --port 8080 --chat-template-kwargs '{"enable_thinking":false}'
+PodmanArgs=--memory=1g --cpus=1
+
+[Service]
+Restart=always
+TimeoutStartSec=900
+
+[Install]
+WantedBy=multi-user.target

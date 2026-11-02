@@ -1,0 +1,24 @@
+[Unit]
+Description=Zabbix MCP server
+Wants=network-online.target
+After=network-online.target
+
+[Container]
+ContainerName=zabbix-mcp-server
+Image=docker.io/zabbix/zabbix-mcp-server:alpine-trunk
+Network=systemd-training
+Environment=ZBX_FRONTEND_URL=http://zabbix-frontend:8080/api_jsonrpc.php
+Environment=ZBX_ALLOWEDIP=192.168.0.0/24
+Environment=ZBX_ALLOWTOOL_0=problem_get
+Environment=ZBX_ALLOWTOOL_1=trigger_get
+Environment=ZBX_ALLOWTOOL_2=host_get
+Environment=ZBX_ALLOWTOOL_3=hostgroup_get
+Environment=ZBX_ALLOWTOOL_4=maintenance_get
+Environment=ZBX_DENYTOOL_5=*
+PodmanArgs=--memory=128m --cpus=0.5
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

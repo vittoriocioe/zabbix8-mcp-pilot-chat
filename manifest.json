@@ -1,0 +1,94 @@
+{
+	"manifest_version": 2,
+	"id": "mcp-pilot-chat",
+	"name": "MCP Pilot Chat",
+	"namespace": "McpPilotChat",
+	"version": "0.1.8",
+	"author": "vittorioCioe",
+	"url": "https://github.com/vittoriocioe/mcp-pilot-chat",
+	"description": "External module (not part of Zabbix): AI chat that answers questions through the Zabbix MCP server, with the permissions of the logged-in user.",
+	"actions": {
+		"mcppilotchat.view": {
+			"class": "ChatView",
+			"view": "mcppilotchat.view"
+		},
+		"mcppilotchat.step": {
+			"class": "ChatStep",
+			"layout": "layout.json"
+		},
+		"mcppilotchat.status": {
+			"class": "StatusGet",
+			"layout": "layout.json"
+		},
+		"mcppilotchat.config.edit": {
+			"class": "ConfigEdit",
+			"layout": "layout.json",
+			"view": "mcppilotchat.config.edit"
+		},
+		"mcppilotchat.config.update": {
+			"class": "ConfigUpdate",
+			"layout": "layout.json"
+		},
+		"mcppilotchat.connection.test": {
+			"class": "ConnectionTest",
+			"layout": "layout.json"
+		}
+	},
+	"config": {
+		"mcp": {
+			"url": "http://zabbix-mcp-server:8443/mcp",
+			"timeout": 15
+		},
+		"access": {
+			"usrgrpids": []
+		},
+		"ui": {
+			"debug_default": 1,
+			"default_profile": "local-demo"
+		},
+		"prompts": {
+			"system": ""
+		},
+		"profiles": [
+			{
+				"id": "local-demo",
+				"name": "Local demo",
+				"adapter": "openai",
+				"base_url": "http://demo-llm:8080/v1",
+				"api_key": "",
+				"model": "qwen3-0.6b",
+				"prompt_mode": "default",
+				"system_prompt": "",
+				"require_tool_first": 1,
+				"temperature": 0.2,
+				"max_tokens": 512,
+				"context_size": 4096,
+				"max_iterations": 6,
+				"default_limit": 5,
+				"max_limit": 10,
+				"timeout": 600,
+				"tool_allowlist": [
+					"problem_get"
+				],
+				"trim_fields": {
+					"problem_get": ["eventid", "name", "severity", "clock", "opdata"],
+					"trigger_get": ["triggerid", "description", "priority", "value", "opdata"],
+					"host_get": ["hostid", "name", "triggers[].triggerid", "triggers[].description",
+						"triggers[].priority", "triggers[].value", "triggers[].opdata"],
+					"hostgroup_get": ["groupid", "name"],
+					"maintenance_get": ["maintenanceid", "name", "active_since", "active_till"]
+				},
+				"format_times": 1,
+				"extra_params": "",
+				"approval_required": 1,
+				"starter_prompts": [
+					"Show current High and Disaster problems",
+					"Show the 5 latest problems",
+					"Are there unacknowledged Disaster problems?"
+				],
+				"usrgrpids": [],
+				"generic": {}
+			}
+		]
+	}
+}
