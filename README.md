@@ -1,4 +1,4 @@
-# Zabbix 8.0 MCP Pilot Chat
+# MCP Pilot Chat
 
 > **External module for Zabbix 8.0. Not part of Zabbix and not supported by Zabbix SIA.**
 > A personal project, maintained on a best-effort basis: there is no commitment to fixes or updates.
@@ -106,7 +106,7 @@ the MCP server, the token usage and which tools the profile may use.*
 2. **Install the module** in the frontend's `modules` folder:
    ```bash
    cd /usr/share/zabbix/modules
-   git clone https://github.com/vittoriocioe/mcp-pilot-chat.git
+   git clone https://github.com/vittoriocioe/zabbix8-mcp-pilot-chat.git mcp-pilot-chat
    ```
    Or download a release and unpack it there. For containerized frontends, mount the folder into the container:
    [docs/installation.md](docs/installation.md#2-install-the-module).

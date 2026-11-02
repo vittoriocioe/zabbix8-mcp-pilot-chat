@@ -228,7 +228,7 @@ The official frontend image serves the frontend from `/usr/share/zabbix`, so the
 
    ```bash
    mkdir -p /opt/zabbix/modules && cd /opt/zabbix/modules
-   git clone https://github.com/vittoriocioe/mcp-pilot-chat.git
+   git clone https://github.com/vittoriocioe/zabbix8-mcp-pilot-chat.git mcp-pilot-chat
    chmod -R a+rX mcp-pilot-chat
    ```
 

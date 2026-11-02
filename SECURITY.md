@@ -3,7 +3,7 @@
 ## Reporting a vulnerability
 
 Please do not open a public issue for security problems. Use GitHub's
-[private vulnerability reporting](https://github.com/vittoriocioe/mcp-pilot-chat/security/advisories/new)
+[private vulnerability reporting](https://github.com/vittoriocioe/zabbix8-mcp-pilot-chat/security/advisories/new)
 for this repository instead. Include the module version, what an attacker can do, and the steps to reproduce.
 
 This is a personal project maintained on a best-effort basis. Reports are read and taken seriously, but there is

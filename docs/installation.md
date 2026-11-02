@@ -75,11 +75,11 @@ find / -name zabbix.php -not -path '*/proc/*' 2>/dev/null
 
 ```bash
 cd <frontend>/modules
-git clone https://github.com/vittoriocioe/mcp-pilot-chat.git
+git clone https://github.com/vittoriocioe/zabbix8-mcp-pilot-chat.git mcp-pilot-chat
 ```
 
 Or download `mcp-pilot-chat-<version>.zip` from the
-[releases](https://github.com/vittoriocioe/mcp-pilot-chat/releases) and unpack it there, so that
+[releases](https://github.com/vittoriocioe/zabbix8-mcp-pilot-chat/releases) and unpack it there, so that
 `<frontend>/modules/mcp-pilot-chat/manifest.json` exists. The release archive contains only the files Zabbix
 needs, plus the README, license and changelog. The web server user needs read access:
 `chmod -R a+rX mcp-pilot-chat`.

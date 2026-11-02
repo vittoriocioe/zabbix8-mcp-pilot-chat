@@ -5,7 +5,7 @@
 	"namespace": "McpPilotChat",
 	"version": "0.1.8",
 	"author": "vittorioCioe",
-	"url": "https://github.com/vittoriocioe/mcp-pilot-chat",
+	"url": "https://github.com/vittoriocioe/zabbix8-mcp-pilot-chat",
 	"description": "External module (not part of Zabbix): AI chat that answers questions through the Zabbix MCP server, with the permissions of the logged-in user.",
 	"actions": {
 		"mcppilotchat.view": {
