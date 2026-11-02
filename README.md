@@ -3,7 +3,7 @@
 > **External module for Zabbix 8.0. Not part of Zabbix and not supported by Zabbix SIA.**
 > A personal project, maintained on a best-effort basis: there is no commitment to fixes or updates.
 > See [Support](#support).
->
+
 > **Built with AI assistance:** the code and documentation were written with Claude (Anthropic) under my
 > direction, and tested with automated and manual tests and in a Zabbix 8.0 lab.
 
