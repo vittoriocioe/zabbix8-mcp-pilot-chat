@@ -1,4 +1,4 @@
-# MCP Pilot Chat
+# Zabbix 8.0 MCP Pilot Chat
 
 > **External module for Zabbix 8.0. Not part of Zabbix and not supported by Zabbix SIA.**
 > A personal project, maintained on a best-effort basis: there is no commitment to fixes or updates.
